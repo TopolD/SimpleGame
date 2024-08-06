@@ -255,8 +255,12 @@ shape = SubResource("CapsuleShape2D_ycf77")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5, -22)
 sprite_frames = SubResource("SpriteFrames_vm1kf")
-animation = &"Run"
-frame_progress = 0.0356844
+animation = &"TurnAround"
+frame = 1
+frame_progress = 0.635088
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-7.0928, -17.4289)

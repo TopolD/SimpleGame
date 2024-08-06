@@ -5,7 +5,7 @@ const JUMP_VELOCITY = -400.0
 @onready var animation = $AnimatedSprite2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var canPick = true
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -22,13 +22,16 @@ func _physics_process(delta):
 	move_and_slide()
 
 func update_animation():
-	#if velocity.x < 0:
-		#animation.flip_h = true
-	#elif velocity.x > 0:
-		#animation.flip_h = false
+	if velocity.x < 0:
+		animation.flip_h = true
+	elif velocity.x > 0:
+		animation.flip_h = false
+
+			
 		
 	if velocity.x:
 		animation.play("Run")
+		
 	else:
 		animation.play("Idle")
 		

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b833gnn14u30b"]
+
+[ext_resource type="Texture2D" uid="uid://0c3ujj30nsnw" path="res://world_assets/decorations/Barrel 0011.png" id="1_m808l"]
+[ext_resource type="Script" path="res://hand mechanics/object_to_barrel.gd" id="1_nwi5j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_idn8k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ub36b"]
+
+[node name="objectToBarrel" type="RigidBody2D"]
+script = ExtResource("1_nwi5j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.995246, 1.00524)
+texture = ExtResource("1_m808l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.25479, 1.13578)
+shape = SubResource("CircleShape2D_idn8k")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.21952, 1.16503)
+shape = SubResource("CircleShape2D_ub36b")
